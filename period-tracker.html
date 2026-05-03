@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cycle Sync | Period Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/periods.css" />
+  </head>
+  <body>
+    <div class="view periods-view">
+      <header class="cozy-header">
+        <h1>Cycle Sync 🌸</h1>
+        <p>Tracking your flow and glow.</p>
+      </header>
+
+      <!-- Log Period Section -->
+      <div class="glass period-input-card">
+        <h3>Log New Cycle</h3>
+        <p class="input-label">When did it start?</p>
+        <input type="date" id="period-start" />
+        <button id="save-period" class="btn">Log Period Start</button>
+      </div>
+
+      <!-- History List -->
+      <div class="history-container">
+        <h3>Previous Cycles</h3>
+        <div id="period-history">
+          <!-- Cycle logs will appear here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button onclick="window.location.href = 'dashboard.html'">
+        🏠<br />Home
+      </button>
+      <button onclick="window.location.href = 'mood-tracker.html'">
+        📊<br />Stats
+      </button>
+      <button onclick="window.location.href = 'journal.html'">
+        📝<br />Journal
+      </button>
+      <button onclick="window.location.href = 'meds.html'" class="active">
+        💊<br />Meds
+      </button>
+      <button
+        onclick="window.location.href = 'period-tracker.html'"
+        class="active"
+      >
+        🌸<br />Period
+      </button>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/periods.js"></script>
+  </body>
+</html>

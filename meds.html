@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stay Healthy | Meds</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/meds.css" />
+  </head>
+  <body>
+    <div class="view meds-view">
+      <header class="cozy-header">
+        <h1>Care Routine 💊</h1>
+        <p>A little reminder to take care of yourself.</p>
+      </header>
+
+      <!-- Add Med Section -->
+      <div class="glass med-input-card">
+        <h3>Add New Reminder</h3>
+        <input type="text" id="med-name" placeholder="Medicine name..." />
+        <input type="time" id="med-time" />
+        <button id="add-med" class="btn">Add to routine</button>
+      </div>
+
+      <!-- Daily List -->
+      <div class="todo-container">
+        <h3>Today's Schedule</h3>
+        <div id="med-todo-list">
+          <!-- Meds will appear here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button onclick="window.location.href = 'dashboard.html'">
+        🏠<br />Home
+      </button>
+      <button onclick="window.location.href = 'mood-tracker.html'">
+        📊<br />Stats
+      </button>
+      <button onclick="window.location.href = 'journal.html'">
+        📝<br />Journal
+      </button>
+      <button onclick="window.location.href = 'meds.html'" class="active">
+        💊<br />Meds
+      </button>
+      <button onclick="window.location.href = 'period-tracker.html'">
+        💖<br />Periods
+      </button>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/meds.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((reg) => console.log("Service Worker Registered!", reg))
+            .catch((err) => console.log("Service Worker Error", err));
+        });
+      }
+    </script>
+  </body>
+</html>

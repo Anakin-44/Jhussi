@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Journey | Stats</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/stats.css" />
+  </head>
+  <body>
+    <div class="view stats-view">
+      <header class="cozy-header">
+        <h1>Your Journey ✨</h1>
+        <p>Looking back at your beautiful week.</p>
+      </header>
+
+      <!-- The Chart Container -->
+      <div class="chart-card">
+        <h3>Mood Trends</h3>
+        <div class="chart-container">
+          <canvas id="moodChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Quick Stats Breakdown -->
+      <div class="insight-card">
+        <p id="insight-text">Loading your insights...</p>
+      </div>
+    </div>
+
+    <!-- Floating Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button onclick="window.location.href = 'dashboard.html'">
+        🏠<br />Home
+      </button>
+      <button
+        onclick="window.location.href = 'mood-tracker.html'"
+        class="active"
+      >
+        📊<br />Stats
+      </button>
+      <button onclick="window.location.href = 'journal.html'">
+        📝<br />Journal
+      </button>
+      <button onclick="window.location.href = 'meds.html'">💊<br />Meds</button>
+      <button onclick="window.location.href = 'period-tracker.html'">
+        💖<br />Periods
+      </button>
+    </nav>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/stats.js"></script>
+  </body>
+</html>

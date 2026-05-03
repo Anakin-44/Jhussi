@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta name="google" content="notranslate">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Base</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="view dashboard-view">
+      <!-- Header with Cozy Message -->
+      <header class="cozy-header">
+        <h1 id="greeting">Hi there! ✨</h1>
+        <p id="sub-greeting">How are you feeling in this moment?</p>
+      </header>
+
+      <!-- Quick Mood Submit -->
+      <div class="glass mood-card">
+        <h3>Quick Mood Log</h3>
+        <div class="mood-selector">
+          <input type="range" id="mood-slider" min="1" max="10" value="5" />
+          <div class="mood-display"><span id="mood-value">5</span>/10</div>
+        </div>
+        <button id="save-mood" class="btn">Save my vibe</button>
+      </div>
+
+      <!-- Quick Stats/Widgets -->
+      <!-- Inside dashboard.html -->
+
+    <!-- Quick Stats/Widgets -->
+    <div class="grid-container">
+      <div class="mini-card">
+        <h4>Avg Mood</h4>
+        <p id="avg-mood-val">--</p>
+      </div>
+      <div class="mini-card">
+        <h4>Water Goal</h4>
+        <p id="water-goal-status">0 / 8 glasses</p>
+      </div>
+    </div>
+
+    <!-- Water Counter Section -->
+    <div class="glass water-card" style="margin-top: 20px;">
+      <div class="water-header">
+        <h3>Stay Hydrated 💧</h3>
+        <p>Keep that skin glowing!</p>
+      </div>
+      <div class="water-controls">
+        <button id="remove-water" class="water-btn">-</button>
+        <div class="water-visual">
+           <span id="water-count">0</span>
+           <small>glasses</small>
+        </div>
+        <button id="add-water" class="water-btn">+</button>
+      </div>
+    </div>
+    <!-- Floating Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button onclick="window.location.href = 'dashboard.html'" class="active">
+        🏠<br />Home
+      </button>
+      <button onclick="window.location.href = 'mood-tracker.html'">
+        📊<br />Stats
+      </button>
+      <button onclick="window.location.href = 'journal.html'">
+        📝<br />Journal
+      </button>
+      <button onclick="window.location.href = 'meds.html'">💊<br />Meds</button>
+      <button onclick="window.location.href = 'period-tracker.html'">
+        💖<br />Periods
+      </button>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('Service Worker Registered!', reg))
+        .catch(err => console.log('Service Worker Error', err));
+    });
+  }
+</script>
+  </body>
+</html>

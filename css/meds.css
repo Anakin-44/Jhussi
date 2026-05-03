@@ -1,0 +1,180 @@
+/* Prevent text selection everywhere */
+html,
+body {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and 11 */
+  user-select: none; /* Standard syntax */
+
+  /* Disables the long-press 'copy' menu on many mobile browsers */
+  -webkit-touch-callout: none;
+}
+
+/* Re-enable selection for inputs so she can still type/edit */
+input,
+textarea {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 1. Removes the blue highlight on mobile (Chrome/Safari) */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 2. Removes the blue focus outline on buttons and links */
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: none !important;
+}
+
+/* 3. Optional: Prevent text selection on buttons so it feels like a real app */
+button {
+  user-select: none;
+  -webkit-user-select: none;
+}
+:root {
+  --bg: #fdf8f5;
+  --primary: #e6a4b4;
+  --secondary: #b3c890;
+  --accent: #f3d7ca;
+  --text: #5f504b;
+  --white: rgba(255, 255, 255, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  padding-bottom: 100px;
+  background-image: radial-gradient(var(--accent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.cozy-header {
+  margin: 20px 0 30px 10px;
+}
+
+.cozy-header h1 {
+  font-size: 2.2rem;
+  color: var(--primary);
+}
+
+.glass {
+  background: var(--white);
+  backdrop-filter: blur(10px);
+  border: 2px solid white;
+  border-radius: 28px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(230, 164, 180, 0.1);
+}
+
+.glass h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 18px;
+  border: 2px solid var(--accent);
+  margin-bottom: 12px;
+  background: white;
+  outline: none;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 18px;
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 0px #c58a99;
+}
+
+.todo-container {
+  margin-top: 30px;
+}
+
+.todo-container h3 {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.med-check {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 22px;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+  transition: 0.3s;
+}
+
+/* Big cute checkbox */
+.med-check input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--secondary);
+  cursor: pointer;
+}
+
+.med-check span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.med-check small {
+  color: var(--primary);
+  display: block;
+  font-size: 0.8rem;
+}
+
+/* Nav Styles */
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.bottom-nav button.active {
+  color: var(--primary);
+  opacity: 1;
+}
+.btn:active,
+.water-btn:active {
+  transform: scale(0.95); /* Slight "squish" when pressed */
+  opacity: 0.9;
+}

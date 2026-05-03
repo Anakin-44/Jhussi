@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Thoughts | Journal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/journal.css" />
+  </head>
+  <body>
+    <div class="view journal-view">
+      <header class="cozy-header">
+        <h1>Journal 📝</h1>
+        <p>Write your heart out, Aru.</p>
+      </header>
+
+      <!-- New Entry Section -->
+      <div class="glass journal-input-card">
+        <textarea
+          id="journal-entry"
+          placeholder="What's on your mind today?..."
+          rows="5"
+        ></textarea>
+        <button id="save-journal" class="btn">Seal this memory</button>
+      </div>
+
+      <!-- History Section -->
+      <div class="history-container">
+        <h3>Past Entries</h3>
+        <div id="journal-history">
+          <!-- Entries will appear here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button onclick="window.location.href = 'dashboard.html'">
+        🏠<br />Home
+      </button>
+      <button onclick="window.location.href = 'mood-tracker.html'">
+        📊<br />Stats
+      </button>
+      <button onclick="window.location.href = 'journal.html'" class="active">
+        📝<br />Journal
+      </button>
+      <button onclick="window.location.href = 'meds.html'">💊<br />Meds</button>
+      <button onclick="window.location.href = 'period-tracker.html'">
+        💖<br />Periods
+      </button>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/journal.js"></script>
+  </body>
+</html>
